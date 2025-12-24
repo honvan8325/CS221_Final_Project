@@ -1,0 +1,4 @@
+gradio
+gliner
+requests
+gdown
