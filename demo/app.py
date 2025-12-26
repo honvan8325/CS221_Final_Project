@@ -13,9 +13,9 @@ AVAILABLE_MODELS = {
     "GLiNER-M": "urchade/gliner_medium-v2.1",
     "GLiNER-L": "urchade/gliner_large-v2.1",
     "GliNER-Multi": "urchade/gliner_multi-v2.1",
-    "GLiNER-S-Team10": "./models/GLiNER-S-Team10",
-    "GLiNER-M-Team10": "./models/GLiNER-M-Team10",
-    "GLiNER-Multi-Team10": "./models/GLiNER-Multi-Team10",
+    # "GLiNER-S-Team10": "./models/GLiNER-S-Team10",
+    # "GLiNER-M-Team10": "./models/GLiNER-M-Team10",
+    # "GLiNER-Multi-Team10": "./models/GLiNER-Multi-Team10",
 }
 
 MODEL_KEYS = list(AVAILABLE_MODELS.keys())
