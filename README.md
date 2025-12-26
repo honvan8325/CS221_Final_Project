@@ -129,9 +129,9 @@ File CSV (nếu dùng `--save-csv`): `crossner_results_{model_size}.csv`
 
 ---
 
-## 2. Đánh giá trên 20 NER Benchmarks
+## 2. Đánh giá trên 7 NER Benchmarks
 
-Đánh giá mô hình GLiNER trên 20+ datasets NER khác nhau bao gồm CoNLL03, WikiANN, biomedical datasets, và social media datasets.
+Đánh giá mô hình GLiNER trên 7 datasets NER khác nhau bao gồm WikiANN, biomedical datasets, và social media datasets.
 
 ### 2.1. Cài đặt thư viện
 
@@ -182,10 +182,10 @@ python test_20nerbenchmark.py --model l
 
 ```bash
 # Một dataset
-python test_20nerbenchmark.py --dataset CoNLL03
+python test_20nerbenchmark.py --dataset WikiANN
 
 # Nhiều datasets
-python test_20nerbenchmark.py --dataset CoNLL03 WikiANN NCBI
+python test_20nerbenchmark.py --dataset WikiANN BC5CDR NCBI
 
 # Tất cả datasets
 python test_20nerbenchmark.py --dataset all
@@ -200,21 +200,17 @@ python test_20nerbenchmark.py --save-csv
 **Kết hợp các tùy chọn:**
 
 ```bash
-python test_20nerbenchmark.py --model s --dataset CoNLL03 WikiANN BC5CDR --save-csv
+python test_20nerbenchmark.py --model s --dataset WikiANN BC5CDR GENIA --save-csv
 ```
 
 ### 2.5. Datasets có sẵn
 
--   `CoNLL03` - CoNLL 2003 NER
 -   `WikiANN` - Wikipedia-based NER
--   `NCBI` - NCBI Disease corpus
--   `BC2GM` - BioCreative II Gene Mention
 -   `BC5CDR` - BioCreative V Chemical-Disease Relations
+-   `NCBI` - NCBI Disease corpus
 -   `GENIA` - GENIA corpus
+-   `BC2GM` - BioCreative II Gene Mention
 -   `TweetNER7` - Twitter NER (7 entity types)
--   `Broad-Tweet` - Broad Twitter Corpus
--   `MultiNERD` - Multilingual NER Dataset (English)
--   `Fabner` - Fabrication NER
 -   `HarveyNER` - Hurricane Harvey Twitter NER
 
 ### 2.6. Kết quả
@@ -228,25 +224,31 @@ EVALUATION RESULTS
 
 Dataset              F1 Score     Labels
 ------------------------------------------------------------
-CoNLL03               89.50%       4 types
 WikiANN               85.30%       3 types
+BC5CDR                87.20%       2 types
 NCBI                  82.10%       1 types
-...
+GENIA                 79.40%       5 types
+BC2GM                 84.60%       1 types
+TweetNER7             76.80%       7 types
+HarveyNER             71.50%       4 types
 
 ============================================================
 SUMMARY
 ============================================================
 Dataset    F1 Score
-CoNLL03       89.50
 WikiANN       85.30
+BC5CDR        87.20
 NCBI          82.10
-...
+GENIA         79.40
+BC2GM         84.60
+TweetNER7     76.80
+HarveyNER     71.50
 
-Average F1: 85.20%
+Average F1: 80.99%
 ============================================================
 ```
 
-File CSV (nếu dùng `--save-csv`): `20ner_results_{model_size}.csv`
+File CSV (nếu dùng `--save-csv`): `7ner_results_{model_size}.csv`
 
 ---
 

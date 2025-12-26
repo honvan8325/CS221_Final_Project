@@ -74,27 +74,12 @@ MANUAL_LABEL_MAPS = {
 }
 
 DATASETS_CONFIG = [
-    {"name": "tner/conll2003", "col": "tags", "alias": "CoNLL03"},
     {"name": "wikiann", "config": "en", "col": "ner_tags", "alias": "WikiANN"},
-    {"name": "ncbi_disease", "col": "ner_tags", "alias": "NCBI"},
-    {"name": "spyysalo/bc2gm_corpus", "col": "ner_tags", "alias": "BC2GM"},
     {"name": "tner/bc5cdr", "col": "tags", "alias": "BC5CDR"},
+    {"name": "ncbi_disease", "col": "ner_tags", "alias": "NCBI"},
     {"name": "Aunderline/genia", "alias": "GENIA"},
+    {"name": "spyysalo/bc2gm_corpus", "col": "ner_tags", "alias": "BC2GM"},
     {"name": "tner/tweetner7", "col": "tags", "alias": "TweetNER7"},
-    {"name": "GateNLP/broad_twitter_corpus", "col": "ner_tags", "alias": "Broad-Tweet"},
-    {
-        "name": "Babelscape/multinerd",
-        "config": "default",
-        "col": "ner_tags",
-        "alias": "MultiNERD",
-        "filter_lang": "en",
-    },
-    {
-        "name": "DFKI-SLT/fabner",
-        "config": "fabner",
-        "col": "ner_tags",
-        "alias": "Fabner",
-    },
 ]
 
 
@@ -369,7 +354,7 @@ def evaluate_model(model, test_sets):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="GLiNER Zero-shot NER Evaluation on 20 NER Benchmarks"
+        description="GLiNER Zero-shot NER Evaluation on 7 NER Benchmarks"
     )
 
     parser.add_argument(
@@ -385,13 +370,8 @@ def main():
         type=str,
         nargs="*",
         default=None,
-        help="Dataset(s) to evaluate. Available: CoNLL03, WikiANN, NCBI, BC2GM, BC5CDR, "
-        "GENIA, TweetNER7, Broad-Tweet, MultiNERD, Fabner, HarveyNER. "
-        "Leave empty to run all datasets.",
-    )
-
-    parser.add_argument(
-        "--save-csv", action="store_true", help="Save results to CSV file"
+        help="Dataset(s) to evaluate. Available: WikiANN, BC5CDR, NCBI, GENIA, "
+        "BC2GM, TweetNER7, HarveyNER. ",
     )
 
     args = parser.parse_args()
@@ -429,7 +409,7 @@ def main():
     print("=" * 60)
 
     if args.save_csv:
-        output_file = f"20ner_results_{model_size}.csv"
+        output_file = f"7ner_results_{model_size}.csv"
         df_results.to_csv(output_file, index=False)
         print(f"\n💾 Results saved to: {output_file}")
 
