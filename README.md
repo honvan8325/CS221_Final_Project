@@ -231,21 +231,6 @@ GENIA                 79.40%       5 types
 BC2GM                 84.60%       1 types
 TweetNER7             76.80%       7 types
 HarveyNER             71.50%       4 types
-
-============================================================
-SUMMARY
-============================================================
-Dataset    F1 Score
-WikiANN       85.30
-BC5CDR        87.20
-NCBI          82.10
-GENIA         79.40
-BC2GM         84.60
-TweetNER7     76.80
-HarveyNER     71.50
-
-Average F1: 80.99%
-============================================================
 ```
 
 File CSV (nếu dùng `--save-csv`): `7ner_results_{model_size}.csv`
