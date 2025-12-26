@@ -323,7 +323,7 @@ with gr.Blocks(title="NER Playground") as demo:
 
     model_select = gr.Dropdown(
         choices=MODEL_KEYS,
-        value=["GLiNER-S-Team10", "GLiNER-M-Team10"],
+        value=["GLiNER-S", "GLiNER-M", "GLiNER-L"],
         multiselect=True,
         label="Models",
     )
